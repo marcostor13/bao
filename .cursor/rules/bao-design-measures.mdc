@@ -1,0 +1,27 @@
+---
+description: Medidas y especificaciones del design system BAO para secciones tipo Wellness
+globs: "**/*.astro,**/*.css"
+alwaysApply: false
+---
+
+# BAO Design System — Medidas de Sección
+
+Aplicar estas medidas al construir o modificar secciones similares a "THE WELLNESS STANDARD".
+
+## Títulos y subtítulos
+
+| Elemento | Tamaño | Color | Fuente | Peso |
+|----------|--------|-------|--------|------|
+| Título principal (ej. THE WELLNESS STANDARD) | 44px | `#2E394B` | Cormorant Garamond | 400 |
+| Subtítulo (ej. WHY NON-TOXIC MATTERS.) | 25px | `#D5AD7F` | Raleway | 400 |
+| Títulos de bloque (CONTENT, THE IMPACT) | 25px | `#2E394B` | Cormorant Garamond | 400 |
+
+## Iconos
+
+- **Tamaño**: 37.5px × 37.5px (alto y ancho iguales)
+- **Color**: Los SVGs usan `#D5AD7F` internamente
+
+## Colores de referencia
+
+- `#2E394B` — títulos en fondos claros
+- `#D5AD7F` — acentos, subtítulos, iconos

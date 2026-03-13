@@ -1,0 +1,286 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="The Process" description="From chaos to calm in 4 simple steps — BA Organization's proven home transformation process.">
+
+  <!-- ── HERO ── -->
+  <section class="hero-process">
+    <div class="hero-bg"></div>
+    <div class="hero-card">
+      <h1 class="hero-title">From Chaos to Calm in</h1>
+      <p class="hero-steps">4 SIMPLE STEPS.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS STEPS ── -->
+  <section class="process-steps-section">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h2 class="process-steps-title">our process <em>Values</em></h2>
+        <div class="process-steps-divider"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="service-row">
+        <div class="service-text">
+          <p class="step-num-label"><span class="step-num-word">step</span> <em class="step-num-big">1.</em></p>
+          <h3 class="step-title">Discovery Call</h3>
+          <div class="step-divider"></div>
+          <p class="service-desc"><strong>It starts with a conversation.</strong></p>
+          <p class="service-desc">
+            We discuss your pain points, your goals, and the vision you hold for your space.
+            We'll ask about your lifestyle, your family's needs, and any specific wellness concerns.
+          </p>
+          <p class="service-desc">
+            <strong>Deliverable:</strong> A custom proposal and estimated timeline.
+          </p>
+          <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
+        </div>
+        <div class="service-img" style="background-image:url('/images/value-prop-1.webp')"></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="service-row reverse">
+        <div class="service-img" style="background-image:url('/images/value-prop-3.webp')"></div>
+        <div class="service-text">
+          <p class="step-num-label"><span class="step-num-word">step</span> <em class="step-num-big">2.</em></p>
+          <h3 class="step-title">The Heavy Lifting</h3>
+          <div class="step-divider"></div>
+          <p class="service-desc"><strong>This is where the magic begins.</strong></p>
+          <p class="service-desc">
+            <strong>We visit your home to sort, categorize, and edit your belongings.</strong> We guide
+            you through the decision-making process of what to keep and what to let go.
+          </p>
+          <p class="service-desc">
+            <strong>The Wellness Bonus:</strong> We identify toxic cleaning products or materials and
+            suggest safe, effective alternatives.
+          </p>
+          <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="service-row">
+        <div class="service-text">
+          <p class="step-num-label"><span class="step-num-word">step</span> <em class="step-num-big">3.</em></p>
+          <h3 class="step-title">The Design &amp; Install</h3>
+          <div class="step-divider"></div>
+          <p class="service-desc">
+            <strong>We source premium organizational</strong> products that fit your aesthetic — from
+            sustainable wood dividers to hand-woven baskets.
+          </p>
+          <p class="service-desc">
+            We install the systems, label efficiently, and style every surface. You don't lift a finger.
+          </p>
+          <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
+        </div>
+        <div class="service-img" style="background-image:url('/images/value-prop-2.webp')"></div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="service-row reverse">
+        <div class="service-img" style="background-image:url('/images/images1/bao-about-team.webp')"></div>
+        <div class="service-text">
+          <p class="step-num-label"><span class="step-num-word">step</span> <em class="step-num-big">4.</em></p>
+          <h3 class="step-title">The Handover</h3>
+          <div class="step-divider"></div>
+          <p class="service-desc">
+            <strong>We don't just leave you with a pretty room;</strong> we teach you how to keep it
+            that way. We walk you through the new systems, ensuring every family member knows where
+            things belong.
+          </p>
+          <p class="service-desc">
+            <strong>Optional:</strong> Schedule our "Seasonal Refresh" to keep your systems updated
+            as your life evolves.
+          </p>
+          <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* Hero */
+.hero-process {
+  position: relative;
+  padding: 220px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('/images/philosophy-bg.png');
+  background-size: cover;
+  background-position: center 40%;
+}
+.hero-card {
+  position: relative; z-index: 2;
+  background: rgba(29, 41, 60, 0.82);
+  padding: 52px 80px;
+  width: 68%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 68px;
+  font-weight: 400;
+  color: #D5AD7F;
+  line-height: 1.1;
+}
+.hero-steps {
+  font-family: 'Cinzel', serif;
+  font-size: 45px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+.hero-divider {
+  width: 48px;
+  height: 1.5px;
+  background: #D5AD7F;
+  margin-top: 10px;
+}
+.text-center { text-align: center; }
+
+/* Process Steps Section */
+.process-steps-section {
+  background: #ffffff;
+  padding: 96px 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.text-center { text-align: center; }
+.mb-16 { margin-bottom: 4rem; }
+.mt-6 { margin-top: 1.5rem; }
+
+.process-steps-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  color: #2E394B;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.process-steps-title em { font-style: italic; color: #2E394B; }
+.process-steps-divider {
+  width: 48px;
+  height: 2px;
+  background: #D5AD7F;
+  margin: 0 auto;
+}
+
+/* Service-style rows */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 0 48px;
+}
+.service-row:last-child { margin-bottom: 0; }
+.service-row.reverse .service-text { order: 2; }
+.service-row.reverse .service-img  { order: 1; }
+
+.service-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.service-img {
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  width: 100%;
+}
+
+/* Step label */
+.step-num-label {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.step-num-word {
+  font-family: 'Cinzel', serif;
+  font-size: 39px;
+  font-weight: 400;
+  color: #D5AD7F;
+}
+.step-num-big {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: #D5AD7F;
+  line-height: 1;
+}
+.step-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #2E394B;
+  margin-bottom: 4px;
+}
+.step-divider {
+  width: 36px;
+  height: 2px;
+  background: #D5AD7F;
+  margin: 10px 0 18px;
+}
+.service-desc {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 1rem;
+  color: #4F4F59;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.service-desc strong {
+  font-weight: 700;
+  color: #2E394B;
+}
+
+/* Button */
+.btn-card {
+  display: inline-block;
+  background: #D5AD7F;
+  color: #2E394B;
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  padding: 14px 36px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-card:hover {
+  background: #c9a070;
+}
+
+@media (max-width: 768px) {
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0;
+  }
+  .service-row.reverse .service-text { order: 1; }
+  .service-row.reverse .service-img  { order: 2; }
+  .service-img { height: 300px; }
+}
+</style>

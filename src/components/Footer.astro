@@ -1,0 +1,167 @@
+---
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+
+    <!-- Left: Logo + contact + social -->
+    <div class="footer-left">
+      <a href="/" aria-label="BA Organization" class="footer-logo-link">
+        <img
+          src="/images/SVG/1x/logo_footerbao_.webp"
+          alt="BA Organization"
+          class="footer-logo"
+        />
+      </a>
+
+      <div class="footer-contact">
+        <p><strong>Email:</strong> info@baorganization.com</p>
+        <p><strong>Phone:</strong> (678) 749-0931</p>
+        <p><strong>Service Areas:</strong> Georgia</p>
+      </div>
+
+      <div class="footer-social">
+        <p class="follow-label">Follow us</p>
+        <a
+          href="https://instagram.com/baorganization"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          class="ig-link"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D5AD7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="#D5AD7F" stroke="none"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Free guide CTA -->
+    <div class="footer-right">
+      <p class="guide-label">Download our Free Guide</p>
+      <a href="#" class="btn-guide">The Non-Toxic Starter Kit</a>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #1D293C;
+    padding: 64px 0 56px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  /* ── Left column ── */
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-logo-link {
+    display: inline-block;
+    line-height: 0;
+  }
+  .footer-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .footer-contact p {
+    font-family: 'Fivo Sans Modern', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.80);
+    margin: 4px 0;
+    line-height: 1.5;
+  }
+  .footer-contact strong {
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .follow-label {
+    font-family: 'Fivo Sans Modern', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.80);
+    margin-bottom: 10px;
+  }
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+  }
+  .ig-link {
+    display: inline-flex;
+    line-height: 0;
+    transition: opacity 0.2s;
+  }
+  .ig-link:hover { opacity: 0.75; }
+
+  /* ── Right column ── */
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  .guide-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+  .btn-guide {
+    display: inline-block;
+    background: #D5AD7F;
+    color: #1D293C;
+    font-family: 'Fivo Sans Modern', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 18px 48px;
+    min-width: 340px;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-guide:hover {
+    background: #c9a070;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 32px;
+      gap: 48px;
+    }
+    .footer-right {
+      align-items: flex-start;
+      width: 100%;
+    }
+    .btn-guide {
+      min-width: unset;
+      width: 100%;
+    }
+    .guide-label { text-align: left; }
+  }
+</style>

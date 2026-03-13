@@ -1,0 +1,173 @@
+---
+const navLinks = [
+  { href: '/',             label: 'Home' },
+  { href: '/about-us',    label: 'About Us' },
+  { href: '/the-process', label: 'The Process' },
+  { href: '/contact-us',  label: 'Contact Us' },
+];
+const current = Astro.url.pathname;
+---
+
+<header class="navbar">
+  <div class="navbar-inner">
+
+    <!-- Logo real -->
+    <a href="/" class="logo" aria-label="BA Organization">
+      <img src="/images/logo.webp" alt="BA Organization" class="logo-img" />
+    </a>
+
+    <!-- Nav links -->
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-link ${current === link.href ? 'active' : ''}`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    {navLinks.map(link => (
+      <a href={link.href} class={`mobile-link ${current === link.href ? 'active' : ''}`}>
+        {link.label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const menu   = document.getElementById('mobileMenu');
+  toggle?.addEventListener('click', () => menu?.classList.toggle('open'));
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(29,41,60,0.08);
+  }
+
+  .navbar-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo */
+  .logo { display: flex; align-items: center; text-decoration: none; }
+  .logo-img {
+    height: 58px;
+    width: auto;
+    display: block;
+  }
+
+  /* Nav */
+  .nav-list {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  /* Página activa: muted/gris suave */
+  .nav-link.active {
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+
+  .nav-link:not(.active):hover {
+    color: var(--color-gold);
+  }
+
+  /* Mobile toggle */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
+  }
+  .menu-toggle span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--color-navy);
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-link {
+    font-family: var(--font-label);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-navy);
+    text-decoration: none;
+  }
+  .mobile-link.active { color: var(--color-muted); }
+
+  @media (max-width: 768px) {
+    .navbar-inner { padding: 0 24px; height: 68px; }
+    .nav-list     { display: none; }
+    .menu-toggle  { display: flex; }
+    .logo-img     { height: 46px; }
+    
+    .mobile-menu {
+      display: flex;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 68px);
+      background: #fff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 99;
+    }
+    .mobile-menu.open { transform: translateX(0); }
+  }
+</style>

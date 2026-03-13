@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(nvm:*)",
+      "Bash(curl:*)",
+      "Bash(export:*)",
+      "Read(//root/.nvm/**)",
+      "Bash(source:*)",
+      "Bash(mv:*)",
+      "Bash(apt-get install:*)",
+      "Bash(pdftoppm:*)",
+      "Bash(ls:*)",
+      "Bash(pip install:*)",
+      "Bash(python3:*)",
+      "Bash(sed:*)",
+      "Bash(ls \"C:\\\\Marcos\\\\Proyectos\\\\BAO\\\\public\\\\images\\\\images2\\\\\" | grep -E \"BAO.*1[4-9]|BAO.*2[0-9]\" | sort)",
+      "Bash(cd \"C:/Marcos/Proyectos/BAO\" && sed -i 's|/images/images2/BAO%20%20web%20%2B%20landing-|/images/images2/bao-|g' src/pages/index.astro && echo \"Done\")"
+    ]
+  }
+}

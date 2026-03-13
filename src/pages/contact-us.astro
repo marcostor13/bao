@@ -1,0 +1,752 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us" description="Ready to reclaim your space? Book BA Organization today.">
+
+  <!-- ── HERO ── -->
+  <section class="contact-hero">
+    <div class="contact-hero-bg"></div>
+    <div class="contact-hero-card">
+      <h1 class="contact-hero-title">
+        <span class="contact-hero-white">Let's Transform</span><br />
+        Your Sanctuary
+      </h1>
+      <p class="contact-hero-sub">
+        Ready to reclaim your time and space? Fill out the form<br />
+        below, and we'll be in touch within 24 hours.
+      </p>
+      <div class="contact-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- ── FORM SECTION ── -->
+  <section class="form-section">
+    <div class="container">
+
+      <div id="thankYou" class="thank-you-block" aria-live="polite">
+        <h2 class="ty-title">Thank You!</h2>
+        <p class="ty-sub">We've received your inquiry and will be in touch within 24 hours.</p>
+        <p class="ty-contact">Questions? <a href="mailto:hello@baorganization.com">hello@baorganization.com</a> or call <a href="tel:6787490931">(678) 749-0931</a>.</p>
+      </div>
+
+      <form id="contactForm" class="form-wrapper" novalidate enctype="multipart/form-data">
+
+        <!-- ── Header inside card ── -->
+        <div class="cf-card-header">
+          <div class="cf-card-header-inner">
+            <img src="/images/SVG/1x/Recurso 20bao_.webp" alt="" class="cf-card-icon" aria-hidden="true" />
+            <div class="cf-card-divider"></div>
+            <div>
+              <h1 class="cf-header-title">CONTACT</h1>
+              <p class="cf-header-sub">Ready to Reclaim Your Space?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick selects -->
+        <div class="form-quick-row">
+          <div class="form-group">
+            <label class="form-label" for="service">Which service are you interested in?</label>
+            <select id="service" name="service" class="field" required>
+              <option value="">Select a service</option>
+              <option>Kitchen / Pantry</option>
+              <option>Primary Closet</option>
+              <option>Kids / Playroom</option>
+              <option>Home Office</option>
+              <option>Move-in Concierge</option>
+              <option>Other</option>
+            </select>
+            <span class="error-msg" id="err-service"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="timeline">What is your timeline?</label>
+            <select id="timeline" name="timeline" class="field" required>
+              <option value="">Select a timeline</option>
+              <option>ASAP</option>
+              <option>Within 1 month</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+            </select>
+            <span class="error-msg" id="err-timeline"></span>
+          </div>
+        </div>
+
+        <div class="form-divider-block">
+          <p class="form-section-headline">Start Your Transformation</p>
+          <p class="form-section-sub">
+            We are thrilled to help you design a sanctuary that fits your lifestyle.
+            Please share a few details about your project below.
+          </p>
+        </div>
+
+        <!-- 01. Client Details -->
+        <div class="form-block">
+          <p class="form-block-num">01. Client Details</p>
+          <div class="form-2col">
+            <div class="form-group">
+              <label class="form-label" for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="field" placeholder="Full Name" required />
+              <span class="error-msg" id="err-fullName"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="field" placeholder="Email Address" required />
+              <span class="error-msg" id="err-email"></span>
+            </div>
+          </div>
+          <div class="form-2col">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="field" placeholder="(000) 000-0000" required />
+              <span class="error-msg" id="err-phone"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="address">Project Address</label>
+              <input type="text" id="address" name="address" class="field" placeholder="City, State, Zip" required />
+              <span class="error-msg" id="err-address"></span>
+            </div>
+          </div>
+          <div class="form-group" style="max-width:420px">
+            <label class="form-label" for="instagram">
+              Instagram Handle <span class="form-optional">(Optional)</span>
+              <span class="form-hint">Helps us get a sense of your personal style.</span>
+            </label>
+            <input type="text" id="instagram" name="instagram" class="field" placeholder="@username" />
+          </div>
+        </div>
+
+        <!-- 02. Project Scope -->
+        <div class="form-block">
+          <p class="form-block-num">02. Project Scope</p>
+          <p class="form-sub-label"><strong>Which spaces are we transforming?</strong></p>
+          <div class="checkboxes">
+            <label class="checkbox-label">
+              <input type="checkbox" name="spaces[]" value="Kitchen / Pantry" /> Kitchen / Pantry
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="spaces[]" value="Primary Closet" /> Primary Closet
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="spaces[]" value="Kids / Playroom" /> Kids / Playroom
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="spaces[]" value="Home Office" /> Home Office
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="spaces[]" value="Move-in Concierge" /> Move-in Concierge
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="spaces[]" value="Other" /> Other
+            </label>
+          </div>
+          <span class="error-msg" id="err-spaces"></span>
+
+          <div class="form-group" style="margin-top:24px">
+            <label class="form-label" for="primaryGoals">
+              Primary Goals
+              <span class="form-hint">What do you want to prioritize? (e.g. aesthetics, functionality, decluttering)</span>
+            </label>
+            <textarea id="primaryGoals" name="primaryGoals" class="field-box" rows="6" required></textarea>
+            <span class="error-msg" id="err-primaryGoals"></span>
+          </div>
+        </div>
+
+        <!-- 03. Lifestyle & Wellness -->
+        <div class="form-block">
+          <p class="form-block-num">03. Lifestyle &amp; Wellness</p>
+          <div class="form-group">
+            <label class="form-label" for="wellness">
+              Wellness &amp; Sensitivities
+              <span class="form-hint">Do you have allergies or preferences regarding cleaning products (e.g. non-toxic)?</span>
+            </label>
+            <textarea id="wellness" name="wellness" class="field-box" rows="5"></textarea>
+          </div>
+          <div class="form-group" style="margin-top:16px">
+            <label class="form-label" for="theEdit">The Edit</label>
+            <select id="theEdit" name="theEdit" class="field">
+              <option value="">Select an option</option>
+              <option>Full Home Reset</option>
+              <option>Single Space</option>
+              <option>Seasonal Refresh</option>
+              <option>Move-in Setup</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 04. Visuals -->
+        <div class="form-block">
+          <p class="form-block-num">04. Visuals</p>
+          <div class="form-group">
+            <label class="form-label">
+              Current space photos
+              <span class="form-hint">Don't tidy up! Seeing the "real" space helps us diagnose the issue.</span>
+            </label>
+            <input type="file" id="photoUpload" name="photos[]" multiple accept="image/*" />
+            <label for="photoUpload" class="upload-label">Upload Photos</label>
+            <div id="fileList" class="file-list"></div>
+          </div>
+        </div>
+
+        <!-- Status banner -->
+        <div id="formStatus" role="alert"></div>
+
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit" id="submitBtn" class="btn-submit">
+            Start Your <em>Transformation</em>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FAQs ── -->
+  <section class="faqs-section">
+    <div class="faqs-inner">
+      <h2 class="faqs-title">FAQs <span class="faqs-sub-title">(Frequently Asked Questions)</span></h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-row">
+            <span class="faq-dash">—</span>
+            <span class="faq-num">01</span>
+            <p class="faq-q">Do I need to clean before you arrive?</p>
+          </div>
+          <p class="faq-a">Absolutely not. We are here to handle the mess. Please leave it exactly as it is so we can see how you naturally use the space.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-row">
+            <span class="faq-dash">—</span>
+            <span class="faq-num">02</span>
+            <p class="faq-q">What happens to the items I no longer want?</p>
+          </div>
+          <p class="faq-a">We can arrange for donation drop-offs to local charities, ensuring your items find a second life.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-row">
+            <span class="faq-dash">—</span>
+            <span class="faq-num">03</span>
+            <p class="faq-q">Do you travel outside of your main service area?</p>
+          </div>
+          <p class="faq-a">Yes, we are available for travel projects upon request. Please inquire for travel rates.</p>
+        </div>
+
+      </div>
+
+      <div class="faq-bottom-line"></div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* ── Card Header ── */
+.cf-card-header {
+  background: #1D293C;
+  padding: 40px 64px;
+  margin: -56px -64px 48px;
+}
+.cf-card-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.cf-card-icon {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.cf-card-divider {
+  width: 1px;
+  height: 135px;
+  background: #D5AD7F;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.cf-header-title {
+  font-family: 'Cinzel', serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.cf-header-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  color: #D5AD7F;
+  font-style: normal;
+  letter-spacing: 0.03em;
+}
+
+/* ── Contact Hero ── */
+.contact-hero {
+  position: relative;
+  padding: 220px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.contact-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('/images/philosophy-bg.png');
+  background-size: cover;
+  background-position: center 40%;
+}
+.contact-hero-card {
+  position: relative; z-index: 2;
+  background: rgba(29, 41, 60, 0.82);
+  padding: 52px 80px;
+  width: 68%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.contact-hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 68px;
+  font-weight: 400;
+  color: #D5AD7F;
+  line-height: 1.15;
+}
+.contact-hero-white {
+  color: #ffffff;
+}
+.contact-hero-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-style: normal;
+}
+.contact-hero-divider {
+  width: 48px;
+  height: 1.5px;
+  background: #D5AD7F;
+  margin-top: 4px;
+}
+
+/* ── Form Section ── */
+.form-section {
+  background: #F8F7F4;
+  padding: 64px 0 80px;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.form-wrapper {
+  background: #fff;
+  padding: 56px 64px;
+  box-shadow: 0 2px 32px rgba(29,41,60,0.06);
+}
+.form-quick-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.form-divider-block {
+  border-top: 1px solid #e8e4dd;
+  padding-top: 32px;
+  margin-bottom: 40px;
+}
+.form-section-headline {
+  font-family: 'Cinzel', serif;
+  font-size: 23px;
+  font-weight: 400;
+  color: #D5AD7F;
+  margin-bottom: 10px;
+}
+.form-section-sub {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  color: #6B6B6B;
+  max-width: 640px;
+  line-height: 1.7;
+}
+.form-block { margin-bottom: 48px; }
+.form-block-num {
+  font-family: 'Cinzel', serif;
+  font-size: 23px;
+  font-weight: 400;
+  color: #D5AD7F;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+.form-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 0;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.form-label {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1D1D1B;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.form-hint {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-weight: 400;
+  color: #6B6B6B;
+  font-size: 14px;
+}
+.form-optional {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-weight: 400;
+  color: #6B6B6B;
+  font-size: 14px;
+  display: inline;
+}
+.form-sub-label {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1D1D1B;
+  margin-bottom: 14px;
+}
+.checkboxes {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: start;
+  gap: 12px 36px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  cursor: pointer;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #D5AD7F;
+  flex-shrink: 0;
+}
+
+/* File upload */
+#photoUpload { display: none; }
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1D1D1B;
+  background: transparent;
+  border: 1.5px solid #ccc;
+  padding: 13px 36px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  width: 260px;
+  margin-top: 4px;
+}
+.upload-label:hover { border-color: #D5AD7F; color: #D5AD7F; }
+.file-list {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #6B6B6B;
+  margin-top: 8px;
+  line-height: 1.8;
+}
+
+/* Submit */
+.form-submit { margin-top: 16px; }
+.btn-submit {
+  width: 100%;
+  padding: 18px 24px;
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #D5AD7F;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.btn-submit em { font-style: italic; font-weight: 400; }
+.btn-submit:hover { background: #c49a69; }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Validation errors */
+.field-error {
+  border-bottom-color: #C0392B !important;
+  border-color: #C0392B !important;
+}
+.error-msg {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: #C0392B;
+  min-height: 1em;
+  display: block;
+}
+
+/* Status banner */
+#formStatus {
+  display: none;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+#formStatus.status-error {
+  display: block;
+  border-left: 3px solid #C0392B;
+  background: #fff5f5;
+  color: #8B1A1A;
+}
+
+/* Thank you */
+.thank-you-block {
+  display: none;
+  text-align: center;
+  padding: 80px 32px;
+  background: #fff;
+  box-shadow: 0 2px 32px rgba(29,41,60,0.06);
+}
+.thank-you-block.visible { display: block; }
+.ty-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #1D293C;
+  margin-bottom: 16px;
+}
+.ty-sub {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 12px;
+}
+.ty-contact {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #6B6B6B;
+}
+.ty-contact a { color: #D5AD7F; text-decoration: none; }
+
+/* FAQs */
+.faqs-section {
+  background: #1D293C;
+  padding: 80px 0 72px;
+}
+.faqs-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.faqs-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 56px;
+}
+.faqs-sub-title {
+  font-family: 'Cinzel', serif;
+  font-style: normal;
+  color: #D5AD7F;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.faq-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.faq-dash {
+  font-size: 22px;
+  color: #D5AD7F;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.faq-num {
+  font-family: 'Cinzel', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.faq-q {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #D5AD7F;
+  margin: 0;
+}
+.faq-a {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.80);
+  line-height: 1.75;
+  padding-left: 120px;
+}
+.faq-bottom-line {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin-top: 64px;
+}
+
+@media (max-width: 768px) {
+  .cf-card-header { padding: 32px 20px; margin: -32px -20px 32px; }
+  .cf-header-title { font-size: 40px; }
+  .cf-card-divider { height: 80px; }
+  .form-wrapper { padding: 32px 20px; }
+  .form-quick-row,
+  .form-2col { grid-template-columns: 1fr; gap: 0; }
+  .checkboxes { grid-template-columns: repeat(2, auto); }
+  .upload-label { width: 100%; }
+  .btn-submit { font-size: 0.78rem; }
+}
+</style>
+
+<script>
+  // File list preview
+  const photoInput = document.getElementById('photoUpload') as HTMLInputElement;
+  const fileList   = document.getElementById('fileList') as HTMLDivElement;
+  photoInput?.addEventListener('change', () => {
+    const files = Array.from(photoInput.files ?? []);
+    fileList.textContent = files.map(f => `${f.name} (${(f.size/1024).toFixed(0)} KB)`).join('\n');
+  });
+
+  // Validation helpers
+  function setError(fieldId: string, msg: string) {
+    const field = document.getElementById(fieldId);
+    const errEl = document.getElementById(`err-${fieldId}`);
+    field?.classList.add('field-error');
+    if (errEl) errEl.textContent = msg;
+  }
+  function clearError(fieldId: string) {
+    const field = document.getElementById(fieldId);
+    const errEl = document.getElementById(`err-${fieldId}`);
+    field?.classList.remove('field-error');
+    if (errEl) errEl.textContent = '';
+  }
+  function clearAll() {
+    ['service','timeline','fullName','email','phone','address','primaryGoals'].forEach(clearError);
+    const errSpaces = document.getElementById('err-spaces');
+    if (errSpaces) errSpaces.textContent = '';
+  }
+
+  const form       = document.getElementById('contactForm') as HTMLFormElement;
+  const submitBtn  = document.getElementById('submitBtn') as HTMLButtonElement;
+  const statusEl   = document.getElementById('formStatus') as HTMLDivElement;
+  const thankYou   = document.getElementById('thankYou') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearAll();
+    statusEl.className = '';
+    statusEl.style.display = 'none';
+
+    let hasError = false;
+
+    // Required selects
+    const service  = (document.getElementById('service')  as HTMLSelectElement).value;
+    const timeline = (document.getElementById('timeline') as HTMLSelectElement).value;
+    if (!service)  { setError('service',  'Please select a service.');  hasError = true; }
+    if (!timeline) { setError('timeline', 'Please select a timeline.'); hasError = true; }
+
+    // Text fields
+    const fullName = (document.getElementById('fullName') as HTMLInputElement).value.trim();
+    const email    = (document.getElementById('email')    as HTMLInputElement).value.trim();
+    const phone    = (document.getElementById('phone')    as HTMLInputElement).value.trim();
+    const address  = (document.getElementById('address')  as HTMLInputElement).value.trim();
+    const goals    = (document.getElementById('primaryGoals') as HTMLTextAreaElement).value.trim();
+
+    if (!fullName) { setError('fullName', 'Full name is required.');    hasError = true; }
+    if (!email)    { setError('email',    'Email address is required.'); hasError = true; }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('email', 'Please enter a valid email address.'); hasError = true;
+    }
+    if (!phone) { setError('phone', 'Phone number is required.'); hasError = true; }
+    else if (!/^\+?[\d\s\-().]{7,20}$/.test(phone)) {
+      setError('phone', 'Please enter a valid phone number.'); hasError = true;
+    }
+    if (!address) { setError('address', 'Project address is required.'); hasError = true; }
+    if (!goals)   { setError('primaryGoals', 'Please describe your primary goals.'); hasError = true; }
+
+    // Checkboxes — at least one
+    const spaces = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="spaces[]"]:checked'));
+    if (spaces.length === 0) {
+      const errSpaces = document.getElementById('err-spaces');
+      if (errSpaces) errSpaces.textContent = 'Please select at least one space.';
+      hasError = true;
+    }
+
+    if (hasError) {
+      const firstErr = form.querySelector<HTMLElement>('.field-error');
+      firstErr?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      statusEl.textContent  = 'Please correct the highlighted fields before submitting.';
+      statusEl.className    = 'status-error';
+      statusEl.style.display = 'block';
+      return;
+    }
+
+    // Send
+    submitBtn.disabled   = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const formData = new FormData(form);
+      const res  = await fetch('/api/contact.php', { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (data.success) {
+        form.style.display = 'none';
+        thankYou.classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        statusEl.textContent  = data.message ?? 'Something went wrong. Please try again.';
+        statusEl.className    = 'status-error';
+        statusEl.style.display = 'block';
+        submitBtn.disabled   = false;
+        submitBtn.innerHTML  = 'Start Your <em>Transformation</em>';
+      }
+    } catch {
+      statusEl.textContent  = 'Network error. Please check your connection and try again.';
+      statusEl.className    = 'status-error';
+      statusEl.style.display = 'block';
+      submitBtn.disabled   = false;
+      submitBtn.innerHTML  = 'Start Your <em>Transformation</em>';
+    }
+  });
+</script>
