@@ -22,9 +22,9 @@ import LandingLayout from '../layouts/LandingLayout.astro';
           <span class="landing-hero-title-top">CLEAR SPACES. CALM MINDS.</span>
           <span class="landing-hero-title-bottom">INTENTIONAL LIVING.</span>
         </h1>
-        <button class="landing-hero-btn" type="button">
+        <a href="/contact-us" class="landing-hero-btn">
           Let’s transform your space
-        </button>
+        </a>
       </div>
     </div>
   </section>
@@ -442,6 +442,7 @@ s journey to your home.
   }
 
   .landing-hero-btn {
+    display: inline-block;
     margin-top: 8px;
     padding: 14px 40px;
     border: none;
@@ -453,6 +454,7 @@ s journey to your home.
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    text-decoration: none;
     transition: background 0.2s ease;
   }
   .landing-hero-btn:hover {
