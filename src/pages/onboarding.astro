@@ -51,11 +51,15 @@ import LandingLayout from '../layouts/LandingLayout.astro';
       </div>
     </div>
     <div class="landing-mission-image-col">
-      <img
-        src="/images/landing/imagen-seccion2.png"
-        alt="BA Organization founder"
-        class="landing-mission-image"
-      />
+      <picture>
+        <source srcset="/images/fotos2/IMG_6280.webp" type="image/webp" />
+        <img
+          src="/images/fotos2/IMG_6280.JPG"
+          alt="Organización de despensa en cocina luminosa"
+          class="landing-mission-image"
+          loading="lazy"
+        />
+      </picture>
     </div>
   </section>
 
@@ -183,10 +187,12 @@ import LandingLayout from '../layouts/LandingLayout.astro';
           <p class="landing-s4-item-subtitle">
             Safe for pets, babies, and bare feet.
           </p>
+          <p class="landing-s4-bullets-label">Tools used:</p>
           <ul class="landing-s4-list">
             <li>Plant-based tools (Branch Basics, Dr. Bronner’s).</li>
             <li>Biodegradable &amp; gentle.</li>
           </ul>
+          <p class="landing-s4-bullets-label">The "No" List:</p>
           <ul class="landing-s4-list">
             <li>No VOCs &amp; quats.</li>
             <li>No chlorine/bleach.</li>
@@ -526,6 +532,9 @@ import LandingLayout from '../layouts/LandingLayout.astro';
   /* Columna derecha: imagen full-bleed */
   .landing-mission-image-col {
     overflow: hidden;
+  }
+  .landing-mission-image-col picture {
+    display: contents;
   }
   .landing-mission-image {
     width: 100%;
