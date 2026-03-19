@@ -93,9 +93,16 @@ s journey to your home.
           <img src="/images/landing/imagen-1-seccion3.png" alt="Organization" loading="lazy" />
         </div>
 
-        <!-- Fila 2 izq: imagen 2 -->
+        <!-- Fila 2 izq: imagen ORDER -->
         <div class="landing-s3-cell landing-s3-img">
-          <img src="/images/landing/imagen-2-seccion3.png" alt="Order" loading="lazy" />
+          <picture>
+            <source srcset="/images/fotos2/bv4a0044-hdr-7.webp" type="image/webp" />
+            <img
+              src="/images/fotos2/bv4a0044-hdr-7.jpg"
+              alt="Orden en la cocina: especieros y detalles organizados"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <!-- Fila 2 der: texto ORDER -->
         <div class="landing-s3-cell landing-s3-text">
@@ -110,9 +117,16 @@ s journey to your home.
           <p class="s3-subtitle">STYLE</p>
           <p class="s3-desc">Blending design, function, and personality.</p>
         </div>
-        <!-- Fila 3 der: imagen 3 -->
+        <!-- Fila 3 der: imagen STYLE -->
         <div class="landing-s3-cell landing-s3-img">
-          <img src="/images/landing/imagen-3-seccion3.png" alt="Style" loading="lazy" />
+          <picture>
+            <source srcset="/images/fotos2/BV4A9011-57.webp" type="image/webp" />
+            <img
+              src="/images/fotos2/BV4A9011-57.jpg"
+              alt="Organización con estilo: espacio de cocina ordenado"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
 
@@ -179,12 +193,10 @@ s journey to your home.
           <p class="landing-s4-item-subtitle">
             Safe for pets, babies, and bare feet.
           </p>
-          <p class="landing-s4-bullets-label">Gráfico de “Checklist” (Lo que SÍ usamos):</p>
           <ul class="landing-s4-list">
             <li>Plant-based tools (Branch Basics, Dr. Bronner’s).</li>
             <li>Biodegradable &amp; gentle.</li>
           </ul>
-          <p class="landing-s4-bullets-label">Gráfico de “Prohibido” (The “No” List):</p>
           <ul class="landing-s4-list">
             <li>No VOCs &amp; quats.</li>
             <li>No chlorine/bleach.</li>
@@ -195,12 +207,15 @@ s journey to your home.
 
       <!-- Bloque C -->
       <article class="landing-s4-row">
-        <div class="landing-s4-media">
-          <img
-            src="/images/landing/imagen-3-seccion4.png"
-            alt="Seasonal & holiday styling"
-            loading="lazy"
-          />
+        <div class="landing-s4-media landing-s4-media-natural">
+          <picture>
+            <source srcset="/images/fotos2/IMG_9260.webp" type="image/webp" />
+            <img
+              src="/images/fotos2/IMG_9260.JPG"
+              alt="Estilismo navideño y de temporada: alacena y barra organizados"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div class="landing-s4-content">
           <div class="landing-s4-letter">C</div>
@@ -312,7 +327,7 @@ s journey to your home.
           </div>
           <div class="s6-member-row">
             <img src="/images/landing/svg/icon-2-seccion6.svg" alt="" class="s6-email-icon" />
-            <span>Monica@baorganization.com</span>
+            <span>hello@baorganization.com</span>
           </div>
         </div>
 
@@ -349,7 +364,7 @@ s journey to your home.
 
       <!-- Contacto + Social -->
       <div class="lf-contact">
-        <p><strong>Email:</strong> info@baorganization.com</p>
+        <p><strong>Email:</strong> hello@baorganization.com</p>
         <p><strong>Phone:</strong> (678) 749-0931</p>
         <p><strong>Service Areas:</strong> Georgia</p>
 
@@ -563,7 +578,7 @@ s journey to your home.
     grid-template-columns: 1fr 1fr;
     gap: 4px;
   }
-  .landing-s3-cell {
+  .landing-s3-cell.landing-s3-text {
     min-height: 380px;
   }
   .landing-s3-text {
@@ -576,12 +591,17 @@ s journey to your home.
   }
   .landing-s3-img {
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .landing-s3-img picture {
+    display: block;
+    width: 100%;
   }
   .landing-s3-img img {
     width: 100%;
-    height: 100%;
-    min-height: 380px;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
   .s3-icon {
@@ -730,6 +750,20 @@ s journey to your home.
     display: block;
     object-fit: cover;
   }
+  .landing-s4-media-natural {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .landing-s4-media-natural picture {
+    display: block;
+    width: 100%;
+  }
+  .landing-s4-media-natural img {
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+  }
 
   /* Texto */
   .landing-s4-content {
@@ -793,6 +827,9 @@ s journey to your home.
     color: #4F4F59;
     line-height: 1.75;
   }
+  .landing-s4-content > .landing-s4-list + .landing-s4-list {
+    margin-top: 20px;
+  }
 
   @media (max-width: 768px) {
     /* ── S1: Hero ── */
@@ -844,8 +881,8 @@ s journey to your home.
     .landing-s3-cell {
       min-height: auto;
     }
-    .landing-s3-img img {
-      min-height: 260px;
+    .landing-s3-cell.landing-s3-text {
+      min-height: auto;
     }
     .landing-s3-text {
       padding: 40px 24px;

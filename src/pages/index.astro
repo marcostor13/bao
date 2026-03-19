@@ -42,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="value-cards">
         <!-- Card 1 -->
         <div class="value-card-wrapper">
-          <div class="value-card-image" style="background-image:url('/images/value-prop-1.webp')">
+          <div class="value-card-image" style="background-image:url('/images/fotos2/BV4A9011-57.webp')">
             <div class="value-card-overlay">
               <p class="card-overlay-title">SERVICE<br/>HIGHLIGHTS</p>
             </div>
@@ -70,30 +70,27 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Card 2 -->
         <div class="value-card-wrapper">
-          <div class="value-card-image" style="background-image:url('/images/value-prop-2.webp')">
+          <div class="value-card-image" style="background-image:url('/images/fotos2/IMG_9262.webp')">
             <div class="value-card-overlay">
               <p class="card-overlay-title">THE BA<br/>DIFFERENCE</p>
             </div>
           </div>
           <div class="value-card-content">
             <h3 class="card-content-title">"Where Feng Shui meets Functional Design."</h3>
-            <p class="card-content-text">
-              (Brief mention of energy flow + aesthetics).
-            </p>
             <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="value-card-wrapper">
-          <div class="value-card-image" style="background-image:url('/images/value-prop-3.webp')">
+          <div class="value-card-image" style="background-image:url('/images/fotos2/BV4A8736-10.webp')">
             <div class="value-card-overlay">
               <p class="card-overlay-title">SOCIAL PROOF</p>
             </div>
           </div>
           <div class="value-card-content">
             <p class="card-content-text">
-              Join families across [Location] reclaiming their time and peace." (Placeholder for Testimonials).
+              Join families across Georgia reclaiming their time and peace.
             </p>
             <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
           </div>
@@ -116,7 +113,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-img-wrapper">
-            <div class="pillar-img" style="background-image:url('/images/pillar-1.webp')"></div>
+            <div class="pillar-img" style="background-image:url('/images/fotos2/IMG_9260.webp')"></div>
           </div>
           <div class="pillar-content">
             <span class="pillar-num">01.</span>
@@ -175,7 +172,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <a href="/contact-us" class="btn-card mt-6">BOOK NOW</a>
         </div>
-        <div class="service-img" style="background-image:url('/images/value-prop-1.webp')"></div>
+        <div class="service-img" style="background-image:url('/images/fotos2/BV4A8736-10.webp')"></div>
       </div>
 
       <!-- Service 2 -->
@@ -223,7 +220,7 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Service 4 -->
       <div class="service-row reverse">
-        <div class="service-img" style="background-image:url('/images/images1/BAO  web + landing-13.webp')"></div>
+        <div class="service-img" style="background-image:url('/images/fotos2/BV4A9011-57.webp')"></div>
         <div class="service-text">
           <img src="/images/SVG/SVG/service4bao_.svg" alt="Service 4 Icon" class="service-icon" />
           <h3 class="service-title">SERVICE 4</h3>
@@ -507,7 +504,14 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="journal-grid">
         <article class="journal-card">
-          <img src="/images/images2/bao-25.webp" alt="Journal post 1" loading="lazy"/>
+          <picture>
+            <source srcset="/images/fotos2/bv4a8700-hdr-5.webp" type="image/webp" />
+            <img
+              src="/images/fotos2/bv4a8700-hdr-5.jpg"
+              alt="Armario de cocina organizado con recipientes y botellas reutilizables"
+              loading="lazy"
+            />
+          </picture>
           <div class="journal-card-overlay">
             <p class="journal-card-title">5 Hidden Toxins in Your Cleaning Cabinet (And What to Use Instead).</p>
           </div>
@@ -1490,6 +1494,9 @@ import Layout from '../layouts/Layout.astro';
   position: relative;
   overflow: hidden;
   cursor: pointer;
+}
+.journal-card picture {
+  display: contents;
 }
 .journal-card img {
   width: 100%;

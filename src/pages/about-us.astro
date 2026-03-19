@@ -21,7 +21,14 @@ import Layout from '../layouts/Layout.astro';
   <section class="hello-section">
     <div class="hello-grid">
       <div class="hello-img">
-        <img src="/images/images1/bao-about-team.webp" alt="Monica Avila & Beatriz Miranda" loading="lazy" />
+        <picture>
+          <source srcset="/images/fotos2/IMG_6280.webp" type="image/webp" />
+          <img
+            src="/images/fotos2/IMG_6280.JPG"
+            alt="Organización de despensa en cocina luminosa"
+            loading="lazy"
+          />
+        </picture>
       </div>
       <div class="hello-text">
         <h2 class="hello-title">Hello &amp; Welcome!</h2>
@@ -129,7 +136,6 @@ import Layout from '../layouts/Layout.astro';
       <!-- Project 1 -->
       <div class="project-block">
         <p class="project-title">Project Case Study 1</p>
-        <p class="project-sub">(Casa de Monica)</p>
         <div class="project-images">
           <img src="/images/SVG/1x/Recurso 32bao_.webp" alt="Project 1" loading="lazy" />
           <img src="/images/SVG/1x/Recurso 32bao_.webp" alt="Project 1" loading="lazy" />
@@ -139,7 +145,6 @@ import Layout from '../layouts/Layout.astro';
       <!-- Project 2 -->
       <div class="project-block">
         <p class="project-title">Project Case Study 2</p>
-        <p class="project-sub">(Casa de Betty)</p>
         <div class="project-images">
           <img src="/images/SVG/1x/Recurso 33bao_.webp" alt="Project 2" loading="lazy" />
           <img src="/images/SVG/1x/Recurso 33bao_.webp" alt="Project 2" loading="lazy" />
@@ -149,7 +154,6 @@ import Layout from '../layouts/Layout.astro';
       <!-- Project 3 -->
       <div class="project-block">
         <p class="project-title">Project Case Study 3</p>
-        <p class="project-sub">(Oficina de BA Kitchen &amp; Bath)</p>
         <div class="project-images">
           <img src="/images/SVG/1x/Recurso 34bao_.webp" alt="Project 3" loading="lazy" />
           <img src="/images/SVG/1x/Recurso 34bao_.webp" alt="Project 3" loading="lazy" />
@@ -236,6 +240,9 @@ import Layout from '../layouts/Layout.astro';
   grid-template-columns: 344px 1fr;
   gap: 80px;
   align-items: center;
+}
+.hello-img picture {
+  display: contents;
 }
 .hello-img img {
   width: 344px;
@@ -354,16 +361,18 @@ import Layout from '../layouts/Layout.astro';
 /* Meet the Team */
 .meet-team {
   position: relative;
-  height: 380px;
+  min-height: clamp(440px, 52vh, 640px);
+  padding: 48px 24px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .meet-bg {
   position: absolute; inset: 0;
-  background-image: url('/images/images1/bao-meet-team-bg.webp');
+  background-image: url('/images/fotos2/IMG_6280.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center 28%;
 }
 .meet-overlay {
   position: absolute; inset: 0;
@@ -451,13 +460,6 @@ import Layout from '../layouts/Layout.astro';
   font-size: 29px;
   font-weight: 400;
   color: #D5AD7F;
-  margin-bottom: 6px;
-}
-.project-sub {
-  font-family: 'Fivo Sans Modern', sans-serif;
-  font-size: 21px;
-  font-weight: 400;
-  color: #4f4f59;
   margin-bottom: 20px;
 }
 .project-images {
@@ -479,6 +481,11 @@ import Layout from '../layouts/Layout.astro';
   .values-image-left, .values-image-right { display: none; }
   .values-center { padding: 60px 24px; }
   .values-title { font-size: 30px; }
+  .meet-team {
+    min-height: clamp(400px, 48vh, 560px);
+    padding: 40px 20px;
+  }
+  .meet-bg { background-position: center 22%; }
   .project-images { grid-template-columns: 1fr; }
 }
 </style>

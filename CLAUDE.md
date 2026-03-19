@@ -92,7 +92,7 @@ npm run preview             # preview build
 ```
 
 ## Contacto real del negocio
-- Email: info@baorganization.com
+- Email: hello@baorganization.com
 - Phone: (678) 749-0931
 - Service Areas: Georgia
 - Instagram: @baorganization
