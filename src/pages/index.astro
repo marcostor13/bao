@@ -601,7 +601,15 @@ import Layout from '../layouts/Layout.astro';
           <div class="hc-2col">
             <div class="hc-group">
               <label class="hc-label" for="hc-fullName">Full Name</label>
-              <input type="text" id="hc-fullName" name="fullName" class="field" placeholder="Full Name" required />
+              <input
+                type="text"
+                id="hc-fullName"
+                name="fullName"
+                class="field"
+                placeholder="Full Name"
+                autocomplete="name"
+                required
+              />
               <span class="hc-err" id="hcerr-fullName"></span>
             </div>
             <div class="hc-group">
@@ -613,7 +621,18 @@ import Layout from '../layouts/Layout.astro';
           <div class="hc-2col">
             <div class="hc-group">
               <label class="hc-label" for="hc-phone">Phone Number</label>
-              <input type="tel" id="hc-phone" name="phone" class="field" placeholder="(000) 000-0000" required />
+              <div class="hc-phone-wrapper">
+                <span class="hc-phone-prefix">+1</span>
+                <input
+                  type="tel"
+                  id="hc-phone"
+                  name="phone"
+                  class="field"
+                  placeholder="(000) 000-0000"
+                  inputmode="tel"
+                  required
+                />
+              </div>
               <span class="hc-err" id="hcerr-phone"></span>
             </div>
             <div class="hc-group">
@@ -1656,6 +1675,18 @@ import Layout from '../layouts/Layout.astro';
   accent-color: #D5AD7F;
   flex-shrink: 0;
 }
+.hc-phone-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hc-phone-prefix {
+  font-family: 'Fivo Sans Modern', sans-serif;
+  font-size: 14px;
+  color: #1D1D1B;
+  padding: 8px 10px 6px;
+  border-bottom: 1px solid #ccc;
+}
 #hcPhotoUpload { display: none; }
 .hc-upload-label {
   display: inline-flex;
@@ -1757,6 +1788,36 @@ import Layout from '../layouts/Layout.astro';
     hcFileList.textContent = files.map(f => `${f.name} (${(f.size/1024).toFixed(0)} KB)`).join('\n');
   });
 
+  function hcEnforceLettersOnly(fieldId: string) {
+    const el = document.getElementById(fieldId) as HTMLInputElement | null;
+    el?.addEventListener('input', () => {
+      el.value = el.value.replace(/[^a-zA-Z\s]/g, '');
+    });
+  }
+
+  function hcEnforceUSPhone(fieldId: string) {
+    const el = document.getElementById(fieldId) as HTMLInputElement | null;
+    el?.addEventListener('input', () => {
+      let digits = el.value.replace(/\D/g, '');
+      if (digits.startsWith('1')) digits = digits.slice(1);
+      digits = digits.slice(0, 10);
+      let formatted = '';
+      if (digits.length > 0) {
+        formatted = '(' + digits.slice(0, Math.min(3, digits.length));
+      }
+      if (digits.length >= 3) {
+        formatted = '(' + digits.slice(0, 3) + ')';
+      }
+      if (digits.length > 3) {
+        formatted += ' ' + digits.slice(3, Math.min(6, digits.length));
+      }
+      if (digits.length > 6) {
+        formatted += '-' + digits.slice(6);
+      }
+      el.value = formatted;
+    });
+  }
+
   function hcSetError(fieldId: string, msg: string) {
     const field = document.getElementById(fieldId);
     const errEl = document.getElementById(`hcerr-${fieldId.replace('hc-','')}`);
@@ -1774,6 +1835,9 @@ import Layout from '../layouts/Layout.astro';
   const hcSubmitBtn = document.getElementById('hcSubmitBtn') as HTMLButtonElement;
   const hcStatusEl  = document.getElementById('hcStatus') as HTMLDivElement;
   const hcThankYou  = document.getElementById('hcThankYou') as HTMLDivElement;
+
+  hcEnforceLettersOnly('hc-fullName');
+  hcEnforceUSPhone('hc-phone');
 
   hcForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1795,8 +1859,9 @@ import Layout from '../layouts/Layout.astro';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) { hcSetError('hc-email', 'Enter a valid email.'); hasError = true; }
 
     const phoneVal = val('hc-phone');
-    if (!phoneVal) { hcSetError('hc-phone', 'Phone is required.'); hasError = true; }
-    else if (!/^\+?[\d\s\-().]{7,20}$/.test(phoneVal)) { hcSetError('hc-phone', 'Enter a valid phone number.'); hasError = true; }
+    const phoneDigits = phoneVal.replace(/\D/g, '');
+    if (!phoneDigits) { hcSetError('hc-phone', 'Phone is required.'); hasError = true; }
+    else if (phoneDigits.length !== 10) { hcSetError('hc-phone', 'Enter a valid US phone number.'); hasError = true; }
 
     if (!val('hc-address')) { hcSetError('hc-address', 'Project address is required.'); hasError = true; }
     if (!val('hc-goals'))   { hcSetError('hc-goals',   'Please describe your primary goals.'); hasError = true; }
