@@ -14,9 +14,11 @@ import LandingLayout from '../layouts/LandingLayout.astro';
     <div class="landing-hero-container">
       <div class="landing-hero-inner">
         <img
-          src="/images/landing/logo-seccion1.png"
+          src="/images/landing/logo-seccion1.webp"
           alt="BA Organization"
           class="landing-hero-logo"
+          fetchpriority="high"
+          decoding="sync"
         />
         <h1 class="landing-hero-title">
           <span class="landing-hero-title-top">CLEAR SPACES. CALM MINDS.</span>
@@ -54,10 +56,11 @@ import LandingLayout from '../layouts/LandingLayout.astro';
       <picture>
         <source srcset="/images/fotos2/IMG_6280.webp" type="image/webp" />
         <img
-          src="/images/fotos2/IMG_6280.JPG"
+          src="/images/fotos2/IMG_6280.webp"
           alt="Organización de despensa en cocina luminosa"
           class="landing-mission-image"
           loading="lazy"
+          decoding="async"
         />
       </picture>
     </div>
@@ -84,7 +87,7 @@ import LandingLayout from '../layouts/LandingLayout.astro';
         </div>
         <!-- Fila 1 der: imagen 1 -->
         <div class="landing-s3-cell landing-s3-img">
-          <img src="/images/landing/imagen-1-seccion3.png" alt="Organization" loading="lazy" />
+          <img src="/images/landing/imagen-1-seccion3.webp" alt="Organization" loading="lazy" decoding="async" />
         </div>
 
         <!-- Fila 2 izq: imagen ORDER -->
@@ -92,9 +95,10 @@ import LandingLayout from '../layouts/LandingLayout.astro';
           <picture>
             <source srcset="/images/fotos2/bv4a0044-hdr-7.webp" type="image/webp" />
             <img
-              src="/images/fotos2/bv4a0044-hdr-7.jpg"
+              src="/images/fotos2/bv4a0044-hdr-7.webp"
               alt="Orden en la cocina: especieros y detalles organizados"
               loading="lazy"
+              decoding="async"
             />
           </picture>
         </div>
@@ -116,9 +120,10 @@ import LandingLayout from '../layouts/LandingLayout.astro';
           <picture>
             <source srcset="/images/fotos2/BV4A9011-57.webp" type="image/webp" />
             <img
-              src="/images/fotos2/BV4A9011-57.jpg"
+              src="/images/fotos2/BV4A9011-57.webp"
               alt="Organización con estilo: espacio de cocina ordenado"
               loading="lazy"
+              decoding="async"
             />
           </picture>
         </div>
@@ -151,9 +156,10 @@ import LandingLayout from '../layouts/LandingLayout.astro';
       <article class="landing-s4-row">
         <div class="landing-s4-media">
           <img
-            src="/images/landing/imagen-1-seccion4.png"
+            src="/images/landing/imagen-1-seccion4.webp"
             alt="Curated organization & interior planning"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="landing-s4-content">
@@ -175,9 +181,10 @@ import LandingLayout from '../layouts/LandingLayout.astro';
       <article class="landing-s4-row landing-s4-row-reverse">
         <div class="landing-s4-media">
           <img
-            src="/images/landing/imagen-2-seccion4.png"
+            src="/images/landing/imagen-2-seccion4.webp"
             alt="Wellness-focused cleaning"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="landing-s4-content">
@@ -206,9 +213,10 @@ import LandingLayout from '../layouts/LandingLayout.astro';
           <picture>
             <source srcset="/images/fotos2/IMG_9260.webp" type="image/webp" />
             <img
-              src="/images/fotos2/IMG_9260.JPG"
+              src="/images/fotos2/IMG_9260.webp"
               alt="Estilismo navideño y de temporada: alacena y barra organizados"
               loading="lazy"
+              decoding="async"
             />
           </picture>
         </div>
@@ -396,7 +404,7 @@ import LandingLayout from '../layouts/LandingLayout.astro';
   .landing-page { overflow-x: hidden; }
 
   .landing-hero {
-    background-image: url('/images/landing/banner-seccion1.png');
+    background-image: url('/images/landing/banner-seccion1.webp');
     background-size: cover;
     background-position: center;
     min-height: 700px;
@@ -544,7 +552,7 @@ import LandingLayout from '../layouts/LandingLayout.astro';
 
   /* ── Sección 3: Organization, Order & Style ── */
   .landing-s3 {
-    background-image: url('/images/landing/banner-seccion3.png');
+    background-image: url('/images/landing/banner-seccion3.webp');
     background-size: cover;
     background-position: center;
   }
